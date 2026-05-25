@@ -3,7 +3,7 @@
 The base template for every project in the **Build 10 AI Projects in 30 Days** bootcamp.
 
 All 10 projects share this identical folder structure and the same `ai/ollama.go` client.
-This is intentional, you build muscle memory, not boilerplate.
+This is intentional — you build muscle memory, not boilerplate.
 
 ---
 
@@ -60,13 +60,13 @@ make run
 Every project uses exactly two functions:
 
 ```go
-// Non-streaming — returns the full response as a string
+// Non-streaming: returns the full response as a string
 response, err := ai.Chat(ai.DefaultModel, []ai.Message{
     {Role: "system", Content: "You are a helpful assistant."},
     {Role: "user",   Content: "Hello!"},
 })
 
-// Streaming — calls onChunk for each token as it arrives
+// Streaming: calls onChunk for each token as it arrives
 err := ai.ChatStream(ai.DefaultModel, messages, func(chunk string) error {
     fmt.Println(chunk) // do something with each token
     return nil         // return error to abort stream early
@@ -90,15 +90,15 @@ err := ai.ChatStream(ai.DefaultModel, messages, func(chunk string) error {
 
 ## Projects Built on This Scaffold
 
-| # | Project                  | Key Addition                        |
-|---|--------------------------|-------------------------------------|
-| 1 | AI Chat Interface        | SSE streaming                       |
-| 2 | Code Snippet Explainer   | System prompts + code models        |
-| 3 | Smart Text Summarizer    | HTMX + prompt engineering           |
-| 4 | AI Resume Analyzer       | File uploads + PDF extraction       |
-| 5 | AI Writing Assistant     | SQLite + contextual AI commands     |
-| 6 | Image Caption Generator  | Multimodal (LLaVA vision model)     |
-| 7 | API Doc Generator        | Multi-pass prompting + export       |
-| 8 | Meeting Notes Summarizer | Whisper audio pipeline              |
-| 9 | AI Agent with Tool Use   | ReAct pattern + tool dispatch       |
-|10 | Full-Stack AI SaaS       | JWT + multi-tenancy + Docker        |
+| # | Project                  | Key Addition                        | Repo                                                                                  |
+|---|--------------------------|-------------------------------------|---------------------------------------------------------------------------------------|
+| 1 | AI Chat Interface        | SSE streaming                       | [project-01-chat](https://github.com/EOEboh/mb-project-01-chat)            |
+| 2 | Code Snippet Explainer   | System prompts + code models        | [project-02-code-explainer](https://github.com/YOUR_GITHUB_USERNAME/project-02-code-explainer) |
+| 3 | Smart Text Summarizer    | HTMX + prompt engineering           | [project-03-summarizer](https://github.com/YOUR_GITHUB_USERNAME/project-03-summarizer) |
+| 4 | AI Resume Analyzer       | File uploads + PDF extraction       | [project-04-resume-analyzer](https://github.com/YOUR_GITHUB_USERNAME/project-04-resume-analyzer) |
+| 5 | AI Writing Assistant     | SQLite + contextual AI commands     | [project-05-writing-assistant](https://github.com/YOUR_GITHUB_USERNAME/project-05-writing-assistant) |
+| 6 | Image Caption Generator  | Multimodal (LLaVA vision model)     | [project-06-image-captioner](https://github.com/YOUR_GITHUB_USERNAME/project-06-image-captioner) |
+| 7 | API Doc Generator        | Multi-pass prompting + export       | [project-07-api-doc-generator](https://github.com/YOUR_GITHUB_USERNAME/project-07-api-doc-generator) |
+| 8 | Meeting Notes Summarizer | Whisper audio pipeline              | [project-08-meeting-notes](https://github.com/YOUR_GITHUB_USERNAME/project-08-meeting-notes) |
+| 9 | AI Agent with Tool Use   | ReAct pattern + tool dispatch       | [project-09-ai-agent](https://github.com/YOUR_GITHUB_USERNAME/project-09-ai-agent)   |
+|10 | Full-Stack AI SaaS       | JWT + multi-tenancy + Docker        | [project-10-ai-saas](https://github.com/YOUR_GITHUB_USERNAME/project-10-ai-saas)     |
